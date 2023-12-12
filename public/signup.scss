@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+header,footer{
+    max-width: 1440px;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+}
+.container{
+    display: flex;
+    
+}
+input{
+   border-radius: 25px; 
+   padding: 3px;
+}
+.userlogo{
+    img{
+        width: 35px;
+        height: 35px;
+    }
+}
+.upload_button{
+    display: none;
+}
+body{
+    background-color: gray;
+    .header-container{
+        background-color: darkgrey;
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .logo{
+                a{
+                    text-decoration: none;                    
+                }
+            }
+            nav{
+                .user-menu-small{
+                    .userlogo{
+                        display: none;
+                    }
+                    .modal-menu-small{
+                        div{
+                            .user-menu-small-list{
+                                li{
+                                    a{
+                                        color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .user-menu-big{
+                    .user-menu-big-list{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 4%;
+                        li{
+                            list-style: none;
+                            a{
+                                color: white;            
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            text-align: center;
+            padding: 15px;
+        }
+        .signup{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            label{
+                align-self:baseline;
+            }
+            .files{
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                .upload_pic{
+                    border-radius: 5px;
+                    border: 1px solid black;
+                }
+                .upload_cv{
+                    border-radius: 5px;
+                    border: 1px solid black;
+                }
+            }
+            button{
+                padding : 3px;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            }
+        }
+    }
+}

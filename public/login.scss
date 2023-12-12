@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+input{
+    //display: flex;
+    width: 200px;
+}
+header,footer{
+    max-width: 1440px;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+}
+.container{
+    display: flex;
+    
+}
+.userlogo{
+    img{
+        width: 35px;
+        height: 35px;
+    }
+}
+body{
+    background-color: gray;
+    .header-container{
+        background-color: darkgrey;
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .logo{
+                a{
+                    text-decoration: none;                    
+                }
+            }
+            nav{
+                .user-menu-small{
+               
+                    .modal-menu-small{
+                        div{
+                            .user-menu-small-list{
+                                li{
+                                    a{
+                                        color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .user-menu-big{
+                    .user-menu-big-list{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 4%;
+                        li{
+                            list-style: none;
+                            a{
+                                color: white;            
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+    .login{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        h1{
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .login-form{
+            display:flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;   
+            gap: 5px;
+            input{
+                border-radius: 25px;
+                height: 30px;
+            }
+        }
+    }   
+}
+@media only screen and (max-width:600px) {
+       .user-menu-big{
+            display: none;
+       }
+}
+@media only screen and (max-width:876px){
+    .user-menu-small{
+        display: none;
+    }
+    .user-menu-big-list{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width:1300px){
+
+}

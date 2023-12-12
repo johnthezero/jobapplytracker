@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+<%- include('partials/header'); -%>
+<div class="main">
+    <h1>The DASHBOARD </h1>
+    <p><a href="">Create a new job</a></p>
+    <div class="filters">
+      <div class="filter_by">
+        <label for="select_filter_by">Filter By</label>
+        <select name="select_filter_by" id="select_filter_by">
+          <option value="Status">Status</option>
+          <option value="Date">Date</option>
+        </select>
+      </div>
+      <div class="order_by">
+        <label for="order_by">Order By</label>
+        <select name="order_by" id="order_by">
+          <option value="asc">Asc</option>
+          <option value="desc">Desc</option>
+        </select>
+      </div>
+    </div>
+    <div class="job_grid">
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+      <div class="card">
+        <div class="status">
+          <p>Interested</p>
+        </div>
+        <h2>Job title</h2>
+        <p>Company</p>
+        <p><a href="">See more...</a></p>
+      </div>
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>
+</body>
+</html>

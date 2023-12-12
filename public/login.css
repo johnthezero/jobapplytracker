@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  width: 200px;
+}
+
+header, footer {
+  max-width: 1440px;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+}
+
+.container {
+  display: flex;
+}
+
+.userlogo img {
+  width: 35px;
+  height: 35px;
+}
+
+body {
+  background-color: gray;
+}
+body .header-container {
+  background-color: darkgrey;
+}
+body .header-container header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header-container header .logo a {
+  text-decoration: none;
+}
+body .header-container header nav .user-menu-small .modal-menu-small div .user-menu-small-list li a {
+  color: red;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4%;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li {
+  list-style: none;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li a {
+  color: white;
+}
+body .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .login h1 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-size: 24px;
+}
+body .login .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+body .login .login-form input {
+  border-radius: 25px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .user-menu-big {
+    display: none;
+  }
+}
+@media only screen and (max-width: 876px) {
+  .user-menu-small {
+    display: none;
+  }
+  .user-menu-big-list {
+    display: flex;
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    border-radius: 25px;
+    padding: 4px;
+    background-color: red;
+    color: white;
+}
+input{
+    //display: flex;
+    width: 200px;
+}
+header,footer{
+    max-width: 1440px;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    background-color: darkgray;
+}
+.container{
+    display: flex;
+    
+}
+.userlogo{
+    img{
+        width: 35px;
+        height: 35px;
+    }
+}
+body{
+    background-color: gray;
+    .header-container{
+        background-color: darkgrey;
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .logo{
+                a{
+                    text-decoration: none;                    
+                }
+            }
+            nav{
+                .user-menu-small{
+               
+                    .modal-menu-small{
+                        div{
+                            .user-menu-small-list{
+                                li{
+                                    a{
+                                        color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .user-menu-big{
+                    .user-menu-big-list{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 4%;
+                        li{
+                            list-style: none;
+                            a{
+                                color: white;            
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+   .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .title{
+            font-size: 24px;
+            padding-bottom: 15px;
+        }
+        .main-grid{
+            display: grid;
+            grid-template-columns: 3;
+            grid-template-rows: 2;
+            .left{
+                grid-row: 1/3;
+                grid-column: 1/2;
+                .profile-picture{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .right{
+                .infos{
+                    p{
+                     line-height: 1.4rem;
+                    }
+                }
+                .modify-upload{
+                    .cv-download-upload{
+                        .download{
+
+                        }
+                        .upload{
+
+                        }
+                }
+                .modify{
+
+                }
+            }
+        }
+    }           
+   
+    }
+} 
+
+@media only screen and (max-width:600px) {
+    .user-menu-big{
+         display: none;
+    }
+}
+@media only screen and (max-width:876px){
+    .user-menu-small{
+        display: none;
+    }
+    .user-menu-big-list{
+         display: flex;
+        flex-direction: row;
+    }
+}

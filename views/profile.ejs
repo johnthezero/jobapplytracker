@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/profile.css">
+</head>
+<%- include('partials/header'); -%>
+<div class="main-container">
+    <div class="title">My Profile</div>
+    <div class="main-grid">
+        <div class="left">
+            <img class="profile-picture" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+        </div>
+        <div class="right">
+            <div class="infos">
+                <p>Full name : <%= firstname %>,<%= lastname %> </p>
+                <p>email : <%= email %></p>
+                <p>Github : <%= github %></p>
+            </div>
+            <div class="modify-upload">
+                <div class="cv-download-upload">
+                    <button class="download btn">Download CV</button>
+                    <button class="upload btn">Upload CV</button>
+                </div>
+                <div class="modify">
+                    <button class="change-password btn">Change password</button>
+                </div>
+            </div>   
+        </div>
+        <div class="secret"></div>
+    </div>
+</div>
+</body>
+</html>

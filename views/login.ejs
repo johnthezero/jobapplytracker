@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/login.css">
+</head>
+<%- include('partials/header'); -%>
+    <div class="login container" >
+        <h1>LOGIN</h1>
+
+        <form class="login-form" action="/login" method="post">
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password">
+            <button class="btn">Log in</button>
+        </form>
+    </div>
+  
+
+
+<%- include('partials/footer'); -%>
+</body>
+<script>
+    const button=document.querySelector("button");
+    button.addEventListener("click",(ev)=>{
+        //ev.preventDefault();
+        console.log("click");
+    });
+</script>
+</html>

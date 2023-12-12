@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, footer {
+  max-width: 1440px;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+}
+
+.container {
+  display: flex;
+}
+
+input {
+  border-radius: 25px;
+  padding: 3px;
+}
+
+.userlogo img {
+  width: 35px;
+  height: 35px;
+}
+
+body {
+  background-color: gray;
+}
+body .header-container {
+  background-color: darkgrey;
+}
+body .header-container header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header-container header .logo a {
+  text-decoration: none;
+}
+body .header-container header nav .user-menu-small .userlogo {
+  display: none;
+}
+body .header-container header nav .user-menu-small .modal-menu-small div .user-menu-small-list li a {
+  color: red;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4%;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li {
+  list-style: none;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li a {
+  color: white;
+}
+body .job-creation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .job-creation-container h1 {
+  font-size: 24px;
+  text-align: center;
+}
+body .job-creation-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  /* .files{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .picture-div{
+          display: flex;
+          flex-direction: column;
+          label{
+              font-size: 1.3em;
+              padding: 10px 15px;
+              border: 1px solid black;
+              border-radius: 4%;
+          }
+          input{
+              display: none;
+          }
+
+      }
+      .file-div{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          label{
+              font-size: 1.3em;
+              padding: 10px 15px;
+              border: 1px solid black;
+              border-radius: 4%;
+          }
+          input{
+              display: none;
+          }
+
+      }
+
+  } */
+}
+body .job-creation-container button {
+  background-color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .user-menu-big {
+    display: none;
+  }
+}
+@media only screen and (max-width: 876px) {
+  .user-menu-small {
+    display: none;
+  }
+  .user-menu-big-list {
+    display: flex;
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=jobcreation.css.map */

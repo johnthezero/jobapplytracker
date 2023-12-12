@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="/signup.css">
+</head>
+<%- include('partials/header'); -%>
+<div class="main container">
+    <h1>Create Job</h1>
+    <form class="signup" action="">
+        <label for="firstname">Firstname</label>
+        <input name="firstname" id="firstname" type="text">
+        <label for="lastname">Lastname</label>
+        <input name="lastname" id="lastname"type="text">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        <label for="github">Github</label>
+        <input type="text" name="github" id="github">
+        <div class="files">
+            <div class="upload_pic">
+                <label for="pic">Upload picture</label>
+                <input class="upload_button"id="pic" type="file">
+            </div>
+            <div class="upload_cv">
+                <label for="cv">Upload CV</label>
+                <input class="upload_button" id="cv" type="file">
+            </div>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <label for="password_repeat">Confirm Password</label>
+        <input type="password" name="password_repeat" id="password_repeat">
+        <button type="submit">Update</button>
+
+    </form>
+</div>    
+
+<%- include('partials/footer'); -%>
+</body>
+</html>

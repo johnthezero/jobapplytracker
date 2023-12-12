@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, footer {
+  max-width: 1440px;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+}
+
+.container {
+  display: flex;
+}
+
+input {
+  border-radius: 25px;
+  padding: 3px;
+}
+
+.userlogo img {
+  width: 35px;
+  height: 35px;
+}
+
+.upload_button {
+  display: none;
+}
+
+body {
+  background-color: gray;
+}
+body .header-container {
+  background-color: darkgrey;
+}
+body .header-container header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header-container header .logo a {
+  text-decoration: none;
+}
+body .header-container header nav .user-menu-small .userlogo {
+  display: none;
+}
+body .header-container header nav .user-menu-small .modal-menu-small div .user-menu-small-list li a {
+  color: red;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4%;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li {
+  list-style: none;
+}
+body .header-container header nav .user-menu-big .user-menu-big-list li a {
+  color: white;
+}
+body .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .main h1 {
+  text-align: center;
+  padding: 15px;
+}
+body .main .signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+body .main .signup label {
+  align-self: baseline;
+}
+body .main .signup .files {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+body .main .signup .files .upload_pic {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+body .main .signup .files .upload_cv {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+body .main .signup button {
+  padding: 3px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}/*# sourceMappingURL=signup.css.map */
