@@ -9,12 +9,7 @@ const validator=require('validator');
 //const { isEmail  } = require("validator");
 const auth=require("../middleware/auth");
 
-// TO IMPLEMENT
-/* module.exports.checkAuth=(request)=>{
-    if(request.firstname && request.lastname && password && email){
-        if(isEmail())return true;
-    }
-} */
+
 
 module.exports.jobcreation_get=(req,res)=>{
     res.render("jobcreation");
@@ -95,7 +90,7 @@ module.exports.login_post= async (req,res,next)=>{
                         process.env.TOKEN_KEY,
                     {expiresIn : "2h"});
                     user.token=token;
-                    //console.log(token);
+                    console.log(token);
                     await res.cookie("jwt", token, {
                         httpOnly: true,
                         maxAge: 60*60*2*1000, // 3hrs in ms

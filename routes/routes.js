@@ -10,7 +10,10 @@ const routeController=require("../controllers/routeController");
 router.get("/",routeController.get);
 router.get("/index",routeController.index_get);
 router.get("/login",routeController.login_get);
-router.post("/login",auth);
+router.post("/login",routeController.login_post,(req,res)=>{
+    console.log(req.cookies);
+    res.redirect("dashboard");
+});
 router.get("/signup",routeController.signup_get);
 router.get("/profile",auth,routeController.profile_get);
 router.post("/profile",auth,routeController.profile_post);

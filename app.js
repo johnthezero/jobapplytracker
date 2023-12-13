@@ -10,7 +10,7 @@ const PORT=3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(routes);
+
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
@@ -29,9 +29,10 @@ mongoose.connect(dbURI)
     console.log("Server listening on 3000");
     
   }).catch((err) => console.log(err));
-  
 
 
+
+  app.use(routes);
   
 
 
