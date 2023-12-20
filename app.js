@@ -22,10 +22,11 @@ app.set("views",path.join(__dirname,"views"));
 
 // LINK TO DB ↓ ▼ ↓
 
-
+const dbURI_local = "mongodb://localhost:27017/jobapptracker";
 const dbURI =  `mongodb+srv://jonthezero:${process.env.MONGO_URI}@cluster0.9rolcn7.mongodb.net/`;
 
-mongoose.connect(dbURI)
+
+mongoose.connect(dbURI_local)
   .then((result) => {
     app.listen(PORT);
     console.log("Server listening on 3000");

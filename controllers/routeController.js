@@ -116,7 +116,7 @@ module.exports.dashboard_get= async (req,res)=>{
         res.render("dashboard",{list,user});
 }
 module.exports.signup_post=async (req,res)=>{
-
+    console.log("@signup_post");
     const { firstname,lastname,email,password,password_repeat }= req.body;
     
     const checkUser=function (firstname,lastname,email,password,password_repeat){
@@ -141,16 +141,6 @@ module.exports.signup_post=async (req,res)=>{
         if(oldUser){
             return res.status(409).send("User already exist");
         }
-        /* var bcrypt = require('bcryptjs');
-        bcrypt.genSalt(10, function(err, salt) {
-            bcrypt.hash("B4c0/\/", salt, function(err, hash) {
-                // Store hash in your password DB.
-            });
-        }); */
-
-
-
-        
         let encryptedPassword = await bcrypt.hash(password,10);
         if(!encryptedPassword){
             res.status(444).send("Something went wrong");
@@ -175,6 +165,7 @@ module.exports.signup_post=async (req,res)=>{
                 httpOnly: true,
                 maxAge: 60*60*2*1000, // 3hrs in ms
             });
+            res.redirect("/login");
         }
     }catch(err){
         console.log(err);
