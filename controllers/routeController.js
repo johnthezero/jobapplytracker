@@ -140,7 +140,21 @@ module.exports.signup_post=async (req,res)=>{
         if(oldUser){
             return res.status(409).send("User already exist");
         }
+        /* var bcrypt = require('bcryptjs');
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash("B4c0/\/", salt, function(err, hash) {
+                // Store hash in your password DB.
+            });
+        }); */
+
+
+
+        
         let encryptedPassword = await bcrypt.hash(password,10);
+        if(!encryptedPassword){
+            res.status(444).send("Something went wrong");
+            return false;
+        }
         const user=User.create({
             _id : new ObjectId(),
             firstname,
