@@ -31,11 +31,45 @@
         <input type="password" name="password" id="password">
         <label for="password_repeat">Confirm Password</label>
         <input type="password" name="password_repeat" id="password_repeat">
-        <button type="submit">Update</button>
+        <button class="test" type="submit">Update</button>
 
     </form>
 </div>    
 
 <%- include('partials/footer'); -%>
 </body>
+<script>
+    document.querySelector(".test").addEventListener("click",(ev)=>{
+        ev.preventDefault();
+        /* let firstname = document.querySelector("#firstname").value;
+        let lastname = document.querySelector("#lastname").value;
+        let email = document.querySelector("#email").value;
+        let github = document.querySelector("#github").value;
+        let password = document.querySelector("#password").value;
+        let password_repeat = document.querySelector("#password_repeat").value;
+        let pic = document.querySelector("#pic").value;
+        let cv = document.querySelector("#cv").value;
+        let data = {
+            firstname:firstname,
+            lastname:lastname,
+            email:email,
+            github:github,
+            password:password,
+            password_repeat:password_repeat,
+            pic:pic,
+            cv:cv
+        }
+        fetch("/signup",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        }) */
+    });
+</script>
 </html>

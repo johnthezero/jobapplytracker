@@ -10,7 +10,7 @@ const auth=require("../middleware/auth");
 
 
 
-module.exports.jobcreation_get=(req,res)=>{
+module.exports.jobcreation_get=async(req,res)=>{
     res.render("jobcreation");
 }
 module.exports.jobcreation_post=async (req,res)=>{
@@ -107,7 +107,7 @@ module.exports.profile_get= async (req,res)=>{
     const user=await User.findOne({email : req.user.user.email});
     res.render("profile",{user : user});
 }
-module.exports.profile_post= (req,res)=>{
+module.exports.profile_post=async (req,res)=>{
     res.send("updating the profile");
 }
 module.exports.dashboard_get= async (req,res)=>{
