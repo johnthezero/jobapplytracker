@@ -16,6 +16,10 @@ const userSchema=new mongoose.Schema({
         type : String,
         required : true,
     },
+    contact_name : {
+        type : String,
+        default : "",
+    },
     email : {
         type : String,
         default : "",   
