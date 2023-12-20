@@ -7,41 +7,23 @@
 </head>
 <%- include('partials/header'); -%>
 <div class="job-creation-container">
-    <h1>Create Job</h1>
+    <a href="/dashboard" >Back to dashboard</a>
     <div class="form-div">
-        <form action="">
-            <label for="job_title">Job title</label>
-            <input id="job_title" type="text" name="job_title">
-            <label for="website">Website of the employer</label>
-            <input id="website" type="text" name="website">
-            <h2>Employers contact</h2>
-            <label for="company_name" >Company name</label>
-            <input id="company_name" type="text" name="company_name">           
-            <label for="contact_email">Contact Email</label>
-            <input id="contact_email" type="email" name="email">
-            <label for="phone">Phone</label>
-            <input id="phone" type="phone" name="phone">
-            <label for="adress">Adress</label>
-            <input id="adress" type="adress" name="adress">
-            <div class="select-div">
-                <label for="origin">Origin</label>
-                <select name="origin" id="origin">
-                    <option value="option1">Option 1</option>
-                    <option value="option1">Option 2</option>
-                    <option value="option1">Option 3</option>
-                </select>
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="status1">Interested</option>
-                    <option value="status2">CV Sent</option>
-                    <option value="status3">Negative</option>
-                    <option value="status4">Interview</option>
-                </select>
-            </div>
+        <form action="/jobupdate/<%=job._id%>" method="get">
+            <h1 class="jobtitle"><%= job.jobtitle %></h1>
+            <p class="company_name">Company : <%= job.company_name %></p>
+            <p class="website">Website : </p>
+            <hr>
+            <h2>Contact of the employer</h2>
+            <p>Name : <span><p class="contact_name"></p></span></p>
+            <p class="email">Email : <%= job.email %></p>
+            <p class="address">Address : <%= job.address %></p>
+            <hr>
+            <h2 class="origin"></h2>
+            <p class="status">Status : <%= job.status %></p>
+            <p class="comments">Comment : <%=job.comments %></p>
 
-            <label for="comments">Comments</label>
-            <textarea id="comments"></textarea>
-            <button>Save</button>
+            <button>Update</button>
     
         </form>
     </div>

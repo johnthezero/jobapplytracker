@@ -6,7 +6,7 @@ const userSchema=new mongoose.Schema({
     },
     user_id : {
         type : String,
-        unique : false
+        required : true,
     },
     jobtitle : {
         type : String,
@@ -18,23 +18,23 @@ const userSchema=new mongoose.Schema({
     },
     email : {
         type : String,
+        default : "",   
     },
     phone : {
         type : String,
         default : "",   
     },
-    adress : {
+    address : {
         type : String,
         default : "",
     },
     origin : {
         type : String,
-        required : true,
         default : "",
     },
     status :{
         type : String,
-        required : true,
+        default : "",   
     },
     comments :{
         type : String,

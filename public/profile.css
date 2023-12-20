@@ -9,6 +9,7 @@ a {
 }
 
 .btn {
+  border: 1px solid black;
   border-radius: 25px;
   padding: 4px;
   background-color: red;
@@ -93,6 +94,50 @@ body .main-container .main-grid .left .profile-picture {
 body .main-container .main-grid .right .infos p {
   line-height: 1.4rem;
 }
+body .main-container .main-grid .right .modify-upload .cv-download-upload .upload input {
+  display: none;
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change {
+  border: 3px solid black;
+  padding: 10px;
+  border-radius: 25%;
+  border-top-right-radius: 0%;
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change div {
+  position: relative;
+  text-align: right;
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change div a {
+  position: relative;
+  top: 0%;
+  right: 0%;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  text-align: right;
+  border: 1px solid black;
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change .updatepassword {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change .updatepassword input {
+  font-size: 24px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+body .main-container .main-grid .right .modify-upload .modify .password-change::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 @media only screen and (max-width: 600px) {
   .user-menu-big {
     display: none;

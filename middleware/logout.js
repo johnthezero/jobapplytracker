@@ -1,14 +1,16 @@
 const jwt=require("jsonwebtoken");
 const config= process.env;
 
-const verifyToken= (req,res,next)=>{
+const logOut= (req,res,next)=>{
+    
+    console.log(req.cookies);
     const token=req.cookies.jwt;
+
     if(!token){
         return res.render("login");
     }
     try{
         const decoded = jwt.verify(token,config.TOKEN_KEY);
-        console.log(decoded);
         req.user = decoded;
     }catch(err){
         console.log(err);

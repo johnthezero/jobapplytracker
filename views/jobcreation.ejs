@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 <div class="job-creation-container">
     <h1>Create Job</h1>
     <div class="form-div">
-        <form action="">
+        <form class="jobcreation-form" action="/jobcreation" method="post" >
             <label for="jobtitle">Job title</label>
             <input id="jobtitle" type="text" name="jobtitle">
             <label for="website">Website of the employer</label>
@@ -22,28 +23,28 @@
             <label for="phone">Phone</label>
             <input id="phone" type="phone" name="phone">
             <label for="adress">Adress</label>
-            <input id="adress" type="adress" name="adress">
+            <input id="adress" type="text" name="address">
             <div class="select-div">
                 <label for="origin">Origin</label>
                 <select name="origin" id="origin">
-                    <option value="option1">---</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option1">Option 2</option>
-                    <option value="option1">Option 3</option>
+                    <option value="">---</option>
+                    <option value="job_offer">Job offer</option>
+                    <option value="spontaneous">Spontaneous</option>
+                    <option value="other">Other</option>
                 </select>
                 <label for="status">Status</label>
                 <select name="status" id="status">
-                    <option value="option1">---</option>
-                    <option value="status1">Interested</option>
-                    <option value="status2">CV Sent</option>
-                    <option value="status3">Negative</option>
-                    <option value="status4">Interview</option>
+                    <option value="">---</option>
+                    <option value="Interested">Interested</option>
+                    <option value="sent">CV Sent</option>
+                    <option value="Negative">Negative</option>
+                    <option value="Interview">Interview</option>
                 </select>
             </div>
 
             <label for="comments">Comments</label>
             <textarea id="comments"></textarea>
-            <button>Save</button>
+            <button class="form-button" type="submit">Save</button>
     
         </form>
     </div>
@@ -52,4 +53,10 @@
 
 <%- include('partials/footer'); -%>
 </body>
+<script>
+    document.querySelector(".form-button").addEventListener("click", (ev) => {
+        //ev.preventDefault();
+        console.log("click");
+    });
+</script>
 </html>

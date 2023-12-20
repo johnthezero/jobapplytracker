@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobcreation</title>
+  <link rel="stylesheet" href="/jobupdate.css">
+</head>
+<%- include('partials/header'); -%>
+<div class="job-creation-container">
+    <a href="/dashboard"  >Back to dashboard</a>
+    <div class="form-div">
+        <form class="update-form" action="/updatejob" method="post">
+            <label for="jobtitle">Jobtitle</label>
+            <input  id ="jobtitle" type="text" value=<%=job.jobtitle%>>
+            <label for="company_name">Company</label>
+            <input  id="company_name" type="text" value=<%=job.company_name%>>
+            <label for="contact_name">Name of the contact</label>
+            <input  id ="contact_name" type="text" >
+            <label for="email">Email</label>
+            <input  id ="email" type="text" value=<%= job.email%>>
+            <label for="phone">Phone</label>
+            <input  id ="phone" type="text" value=<%= job.phone%> >
+            <label for="address">Address</label>
+            <input  id ="address" type="text" value=<%=job.address %> >
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="Sent">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Negative">Rejected</option>
+                <option value="Offer">Offer</option>
+                <option value="Accepted">Accepted</option>
+            </select>
+            <label for="comments">Comments</label>
+            <textarea id ="comments" type="textarea" value=<%= job.comments %> ></textarea>
+
+            <button>Save</button>
+        </form>
+    </div>
+    
+</div>    
+
+<%- include('partials/footer'); -%>
+</body>
+</html>

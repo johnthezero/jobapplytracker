@@ -7,8 +7,8 @@
 </head>
 <%- include('partials/header'); -%>
 <div class="main">
-    <h1>The DASHBOARD </h1>
-    <p><a href="">Create a new job</a></p>
+    <h1>DASHBOARD : <%= user.firstname %> </h1>
+    <p><a href="/jobcreation">Create a new job</a></p>
     <div class="filters">
       <div class="filter_by">
         <label for="select_filter_by">Filter By</label>
@@ -25,74 +25,35 @@
         </select>
       </div>
     </div>
+    
     <div class="job_grid">
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
+      
+      <% for (let item of list) { %>
+        <div class="card" id=<%= item._id %>>
+          <div class="status">
+            <p><%= item.status %></p>
+          </div>
+          <h2><%= item.jobtitle %></h2>
+          <p><%= item.company_name %></p>
+          <form id="form<%=item._id %>" action="/getjob" method="post"> 
+            <input  name="id" value="<%= item._id %>">
+            <input  name="user_id" value="<%= item.user_id %>">
+            <a href="/job/<%=item._id%>" class="seemore">See more...</a>
+          </form>
         </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
-      <div class="card">
-        <div class="status">
-          <p>Interested</p>
-        </div>
-        <h2>Job title</h2>
-        <p>Company</p>
-        <p><a href="">See more...</a></p>
-      </div>
+      <% } %>
+
     </div>
 </div>
 
+<dialog class="modal-seemore">
+
+</dialog>
+
 <%- include('partials/footer'); -%>
 </body>
+<script>
+
+  
+</script>
 </html>

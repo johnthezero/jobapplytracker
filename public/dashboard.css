@@ -101,6 +101,57 @@ body .main .job_grid .card .status {
   right: -10px;
   z-index: 3;
 }
+body .main .job_grid .card .status p {
+  color: red;
+}
+body .main .job_grid .card h2 {
+  color: white;
+  font-size: 14px;
+}
+body .main .job_grid .card p {
+  color: wheat;
+  font-size: 14px;
+}
+body .main .job_grid .card form a {
+  color: blue;
+}
+body .main .job_grid .card form input {
+  display: none;
+}
+body .modal-seemore {
+  background-color: darkgray;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 25%;
+  border-top-right-radius: 0px;
+  width: 300px;
+  height: 400px;
+}
+body .modal-seemore .modal-content {
+  background-color: gray;
+  padding: 10px;
+}
+body .modal-seemore .modal-content .modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body .modal-seemore .modal-content .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+body .modal-seemore::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
 
 @media only screen and (max-width: 600px) {
   .user-menu-big {

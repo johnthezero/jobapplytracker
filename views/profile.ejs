@@ -14,17 +14,33 @@
         </div>
         <div class="right">
             <div class="infos">
-                <p>Full name : <%= firstname %>,<%= lastname %> </p>
-                <p>email : <%= email %></p>
-                <p>Github : <%= github %></p>
+                <p>Full name : <%= user.firstname %>,<%= user.lastname %> </p>
+                <p>email : <%= user.email %></p>
+                <p>Github : <%= user.github %></p>
             </div>
             <div class="modify-upload">
-                <div class="cv-download-upload">
-                    <button class="download btn">Download CV</button>
-                    <button class="upload btn">Upload CV</button>
-                </div>
+                <form class="cv-download-upload" action="/test" method="post">
+                    
+                    
+                    <a href="#" class="download btn">Download CV</a>
+                    <label class="upload btn" for="upload_btn"><input id="upload_btn" type="file" hidden/>Upload CV</label>
+                </form>
                 <div class="modify">
                     <button class="change-password btn">Change password</button>
+                    <dialog class="password-change">
+                        <div>
+                            <a class="close-modal" href="#">X</a>
+                        </div>
+                        <form class="updatepassword" action="updatepassword" method="post">
+                            <label for="oldpassword">Old password</label>
+                            <input type="password" id="oldpassword" name="oldpassword">
+                            <label for="newpassword">New Password</label>
+                            <input type="password" id="newpassword" name="newpassword">
+                            <label for="newpassword_confirm">New Password</label>
+                            <input type="password" id="newpassword_confirm" name="newpassword_confirm">
+                            <button class="update">Save</button>
+                        </form> 
+                    </dialog>
                 </div>
             </div>   
         </div>
@@ -32,4 +48,15 @@
     </div>
 </div>
 </body>
+<script>
+    const modal=document.querySelector('.password-change');
+    const btn=document.querySelector('.change-password');
+    btn.addEventListener('click',()=>{
+        modal.showModal();
+    })  
+    const close=document.querySelector('.close-modal');
+    close.addEventListener('click',()=>{
+        modal.close();
+    })
+</script>
 </html>
