@@ -116,7 +116,7 @@ module.exports.dashboard_get= async (req,res)=>{
         res.render("dashboard",{list,user});
 }
 module.exports.signup_post=async (req,res)=>{
-    res.status(400);
+
     const { firstname,lastname,email,password,password_repeat }= req.body;
     
     const checkUser=function (firstname,lastname,email,password,password_repeat){
@@ -171,7 +171,10 @@ module.exports.signup_post=async (req,res)=>{
             }
         );
             user.token=token;
-            res.status(201).json(user);
+            await res.cookie("jwt", token, {
+                httpOnly: true,
+                maxAge: 60*60*2*1000, // 3hrs in ms
+            });
         }
     }catch(err){
         console.log(err);

@@ -16,7 +16,7 @@ router.get("/signup",routeController.signup_get);
 router.post("/logout",auth,routeController.logout_post);
 router.get("/profile",auth,routeController.profile_get);
 router.post("/profile",auth,routeController.profile_post);
-router.post("/signup",auth,routeController.signup_post);
+router.post("/signup",routeController.signup_post);
 router.get("/dashboard",auth,routeController.dashboard_get);
 router.post("/dashboard/",auth,routeController.dashboard_post);
 router.post("/updatejob",auth,routeController.update_post);
