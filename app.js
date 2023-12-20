@@ -23,7 +23,7 @@ app.set("views",path.join(__dirname,"views"));
 // LINK TO DB ↓ ▼ ↓
 
 
-const dbURI =  `mongodb+srv://jonthezero:${process.env.MONGO_URI}@cluster0.9rolcn7.mongodb.net/?retryWrites=true&w=majority`;
+const dbURI =  `mongodb+srv://jonthezero:${process.env.MONGO_URI}@cluster0.9rolcn7.mongodb.net/`;
 
 mongoose.connect(dbURI)
   .then((result) => {
