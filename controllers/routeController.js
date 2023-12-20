@@ -1,7 +1,5 @@
-
-
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const User=require("../models/User");
 const Job=require("../models/Job");
 const { ObjectId } = require("mongodb");
