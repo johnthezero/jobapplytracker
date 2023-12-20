@@ -116,6 +116,7 @@ module.exports.dashboard_get= async (req,res)=>{
         res.render("dashboard",{list,user});
 }
 module.exports.signup_post=async (req,res)=>{
+    res.status(400);
     const { firstname,lastname,email,password,password_repeat }= req.body;
     
     const checkUser=function (firstname,lastname,email,password,password_repeat){
