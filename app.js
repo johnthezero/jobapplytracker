@@ -7,16 +7,18 @@ const cookieParser=require("cookie-parser");
 const bodyParser=require("body-parser");
 const app=express();
 const PORT=3000;
+const path=require("path");
+app.use(express.static(__dirname+'/public/'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.use(express.static('public'));
+
 app.use(express.json());
 app.use(cookieParser());
 
 app.set("view engine","ejs");
-app.set("views","./views");
+app.set("views",path.join(__dirname+"views"));
 
 // LINK TO DB ↓ ▼ ↓
 
@@ -33,6 +35,8 @@ mongoose.connect(dbURI)
 
 
   app.use(routes);
+
+module.exports = app;
   
 
 
