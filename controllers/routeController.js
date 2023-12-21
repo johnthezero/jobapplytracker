@@ -25,7 +25,7 @@ module.exports.jobcreation_post=async (req,res)=>{
             return true;
         }
         const user_id=req.user.user._id;
-        const { jobtitle,company_name,email,phone,address,origin,status } = req.body;
+        const { jobtitle,website,company_name,email,phone,address,origin,status,comments} = req.body;
 
         if(checkJob(user_id,jobtitle,company_name)&& user_id){
             const job= await Job.findOne({user_id,jobtitle,company_name});
@@ -35,11 +35,13 @@ module.exports.jobcreation_post=async (req,res)=>{
                     user_id : user_id,
                     jobtitle : jobtitle,
                     company_name : company_name,
+                    ...website && {website : website},
                     ...email && {email : email},
                     ...phone && {phone : phone},
                     ...address && {address : address},  
                     ...origin && {origin : origin}, 
-                    ...status && {status : status},                    
+                    ...status && {status : status}, 
+                    ...comments && {comments : comments},                   
                 });
                 res.redirect("/dashboard");
             }else{
@@ -177,6 +179,8 @@ module.exports.dashboard_post= (req,res)=>{
     res.send("dashboard post");
 }
 module.exports.update_post= async(req,res)=>{
+
+    console.log("test");
     const list=await Job.find({user_id : req.user.user._id});
     const user={ id : req.user.user._id,firstname : req.user.user.firstname };
     res.render("dashboard",{list,user});
@@ -191,6 +195,7 @@ module.exports.delete_job_post= async (req,res)=>{
     res.render("dashboard",{user :req.user.user,list : list}); 
 }      
 module.exports.getjob_post = async (req, res) => {
+    
     try {
         if (req.user["user"]._id == req.body.user_id) {
             const job = await Job.findOne({ _id: req.body.id });
@@ -217,28 +222,48 @@ module.exports.jobupdate_get = async (req, res) => {
 };
 module.exports.jobupdate_post = async (req, res) => {
     try {
-        const checkJob = function (user_id, jobtitle, company_name) {
-            if (!user_id || !jobtitle || !company_name) {
+        const checkJob = function ( jobtitle, company_name) {
+            if (!jobtitle || !company_name) {
                 res.status(400).send("All the input are required");
-                return false;
+                return false;   
             }
             return true;
         };
         const user_id = req.user.user._id;
-        const { jobtitle, company_name, email, phone, address, origin, status } = req.body;
-        if (checkJob(user_id, jobtitle, company_name) && user_id) {
-            const job = await Job.findOne({ user_id, jobtitle, company_name });
+        const job_id = req.body.job_id;
+        const { jobtitle,website ,contact_name, company_name, email, phone, address, origin, status, comments } = req.body;
+        if (checkJob( jobtitle, company_name) && user_id) {
+            const job = await Job.findOne({ _id : job_id});
             if (job) {
-                const job = await Job.updateOne(
-                    { user_id, jobtitle, company_name },
+                const updateFields = {
+                    ...(jobtitle && { jobtitle: jobtitle }),
+                    ...(email && { email: email }),
+                    ...(phone && { phone: phone }),
+                    ...(company_name && { company_name: company_name }),
+                    ...(contact_name && { contact_name: contact_name }),
+                    ...(address && { address: address }),
+                    ...(origin && { origin: origin }),
+                    ...(status && { status: status }),
+                    ...(comments && { comments: comments }),
+                    ...(website && { website: website }),
+                };
+
+                const updatedJob = await Job.updateOne({ _id: job_id }, { $set: updateFields });
+               /*  const job = await Job.updateOne(
+                    { jobtitle,website ,contact_name, company_name, email, phone, address, origin, status, comments },
                     {
                         ...email && { email: email },
                         ...phone && { phone: phone },
+                        ...company_name && { company_name: company_name },
+                        ...contact_name && { contact_name: contact_name },
                         ...address && { address: address },
                         ...origin && { origin: origin },
                         ...status && { status: status },
-                    }
-                );
+                        ...comments && { comments: comments },
+                        ...website && { website: website },
+                    },
+                    //{ new: true, upsert: false, remove: {}, fields: {} },
+                ); */
                 res.redirect("/dashboard");
             } else {
                 res.status(400).send("Job does not exists !");

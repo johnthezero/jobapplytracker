@@ -11,17 +11,19 @@
     <div class="form-div">
         <form class="update-form" action="/updatejob" method="post">
             <label for="jobtitle">Jobtitle</label>
-            <input  id ="jobtitle" type="text" value=<%=job.jobtitle%>>
+            <input  id ="jobtitle" type="text" value="<%=job.jobtitle%>" name="jobtitle">
             <label for="company_name">Company</label>
-            <input  id="company_name" type="text" value=<%=job.company_name%>>
+            <input  id="company_name" type="text" value="<%=job.company_name%>" name="company_name">
+            <label for="website">Website</label>
+            <input  id="website" type="text" value="<%=job.website%>" name="website">
             <label for="contact_name">Name of the contact</label>
-            <input  id ="contact_name" type="text" >
+            <input  id ="contact_name" type="text" value="<%= job.contact_name %>" name="contact_name">
             <label for="email">Email</label>
-            <input  id ="email" type="text" value=<%= job.email%>>
+            <input  id ="email" type="text" value="<%= job.email%>" name="email">
             <label for="phone">Phone</label>
-            <input  id ="phone" type="text" value=<%= job.phone%> >
+            <input  id ="phone" type="text" value="<%= job.phone%>" name="phone" >
             <label for="address">Address</label>
-            <input  id ="address" type="text" value=<%=job.address %> >
+            <input  id ="address" type="text" value="<%=job.address %>" name="address" >
             <label for="status">Status</label>
             <select name="status" id="status">
                 <option value="Sent">Applied</option>
@@ -31,7 +33,8 @@
                 <option value="Accepted">Accepted</option>
             </select>
             <label for="comments">Comments</label>
-            <textarea id ="comments" type="textarea" value=<%= job.comments %> ></textarea>
+            <input id="comments" type="text" name="comments" value=<%= job.comments %>>
+            <input type="hidden" value=<%= job._id %> name="job_id">
 
             <button>Save</button>
         </form>

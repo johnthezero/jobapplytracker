@@ -69,18 +69,23 @@
 </body>
 <script>
 let modal=document.querySelector('.delete_job');
-let delete_card=document.querySelector('.delete_card');
-let yes=document.querySelector('.btn_yes');
-let no=document.querySelector('.btn_no');
-delete_card.addEventListener('click',()=>{
-  modal.showModal();
+let delete_card=document.querySelectorAll('.delete_card');
+let yes=document.querySelectorAll('.btn_yes');
+let no=document.querySelectorAll('.btn_no');
+delete_card.forEach((item)=>{
+  item.addEventListener('click',()=>{
+    modal.showModal();
+  });
 });
-no.addEventListener('click',()=>{
-  modal.close();
+yes.forEach((item)=>{
+  item.addEventListener('click',()=>{
+    modal.close();
+  });
 });
-yes.addEventListener('click',()=>{
-  modal.close();
-  console.log("Handle the delete");
+no.forEach((item)=>{
+  item.addEventListener('click',()=>{
+    modal.close();
+  });
 });
 
 </script>

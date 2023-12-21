@@ -15,6 +15,7 @@ const verifyToken= (req,res,next)=>{
         res.locals.user=null;
         return res.render("login");
     }
+    console.log("TEST");
     return next();
 };
 module.exports=verifyToken;

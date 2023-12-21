@@ -20,7 +20,7 @@ router.post("/profile",auth,routeController.profile_post);
 router.post("/signup",routeController.signup_post);
 router.get("/dashboard",auth,routeController.dashboard_get);
 router.post("/dashboard/",auth,routeController.dashboard_post);
-router.post("/updatejob",auth,routeController.update_post);
+router.post("/updatejob",auth,routeController.jobupdate_post);
 router.get("/jobcreation",auth,routeController.jobcreation_get);
 router.post("/jobcreation",auth,routeController.jobcreation_post);
 router.post("/getjob",auth,routeController.getjob_post);    
