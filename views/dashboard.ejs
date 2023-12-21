@@ -40,9 +40,24 @@
             <input  name="user_id" value="<%= item.user_id %>">
             <a href="/job/<%=item._id%>" class="seemore">See more...</a>
           </form>
+          <div class="delete_card">
+            <a href="#">Delete</a>
+          </div>
         </div>
+        <dialog  class="delete_job">
+          <div class="delete_confirm">
+            <p>Are you sure you want to delete this ?</p>
+            <div class="delete_buttons">
+              <form action="/delete_job" method="post">
+                <input type="hidden" name="job_id" value="<%=item._id%>">
+                <button class="btn_yes btn">Yes</button>
+              </form>
+              <button class="btn_no btn">No</button>
+            </div>
+          </div>
+        </dialog>
       <% } %>
-
+        
     </div>
 </div>
 
@@ -53,7 +68,20 @@
 <%- include('partials/footer'); -%>
 </body>
 <script>
+let modal=document.querySelector('.delete_job');
+let delete_card=document.querySelector('.delete_card');
+let yes=document.querySelector('.btn_yes');
+let no=document.querySelector('.btn_no');
+delete_card.addEventListener('click',()=>{
+  modal.showModal();
+});
+no.addEventListener('click',()=>{
+  modal.close();
+});
+yes.addEventListener('click',()=>{
+  modal.close();
+  console.log("Handle the delete");
+});
 
-  
 </script>
 </html>

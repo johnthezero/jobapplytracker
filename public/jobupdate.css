@@ -8,6 +8,13 @@ a {
   text-decoration: none;
 }
 
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 input {
   width: 200px;
 }

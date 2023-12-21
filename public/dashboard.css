@@ -8,12 +8,31 @@ a {
   text-decoration: none;
 }
 
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header, footer {
   max-width: 1440px;
   padding-top: 3%;
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 3%;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 9px;
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: gray;
 }
 
 .container {
@@ -85,7 +104,14 @@ body .main .job_grid {
 }
 body .main .job_grid .card {
   position: relative;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  padding-bottom: 25px;
   width: 150px;
   height: 100px;
 }
@@ -117,6 +143,50 @@ body .main .job_grid .card form a {
 }
 body .main .job_grid .card form input {
   display: none;
+}
+body .main .job_grid .card .delete_card {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+}
+body .main .job_grid .card .delete_card a {
+  color: white;
+  padding: 5px;
+  background-color: red;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+body .main .job_grid .card .delete_card a:hover {
+  background-color: gray;
+}
+body .main .job_grid .delete_job {
+  position: absolute;
+  padding: 20px;
+  border-radius: 25px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: darkgray;
+}
+body .main .job_grid .delete_job .delete_confirm {
+  display: flex;
+  background-color: darkgray;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+body .main .job_grid .delete_job .delete_confirm .delete_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+body .main .job_grid .delete_job::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 body .modal-seemore {
   background-color: darkgray;

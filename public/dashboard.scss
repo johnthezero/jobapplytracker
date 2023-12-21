@@ -6,13 +6,29 @@
 a{
     text-decoration: none;
 }
-
+.right-nav{
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+    align-items: center;
+}
 header,footer{
     max-width: 1440px;
     padding-top: 3%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 3%;
+}
+.btn{
+    border-radius: 25px;
+    padding: 9px;
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    &:hover{
+        background-color: gray;
+    }
 }
 .container{
     display: flex;
@@ -95,7 +111,14 @@ body{
             gap: 15px;
             .card{
                 position: relative;
-                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                border: 2px solid black;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px;
+                padding-bottom: 25px;
                 width: 150px;
                 height: 100px;
                 .status{
@@ -129,7 +152,60 @@ body{
                         display: none;
                     }
                 }
+                .delete_card{
+                    position: absolute;
+                        bottom: -5px;
+                        right: -5px;
+                    a{
+                        color: white;
+                        padding: 5px;
+                        background-color: red;
+                        border-radius: 25px;
+                        border: 1px solid black;
+                        &:hover{
+                            background-color: gray;
+                        }
+
+
+                    }
+                }
             }
+            .delete_job{
+                position: absolute;
+                padding: 20px;
+                border-radius: 25px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: darkgray;
+                .delete_confirm{
+                    display: flex;
+                    
+                    background-color: darkgray;
+                    
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 15px;
+                    
+                    .delete_buttons{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 10px;
+    
+                        form{
+    
+                        }
+                    }
+                }
+            }
+            .delete_job::backdrop{
+                background: rgba(0,0,0,0.6);
+                backdrop-filter: blur(5px);
+            }
+            
         }
     }
     .modal-seemore {

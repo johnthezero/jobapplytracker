@@ -8,6 +8,13 @@ a {
   text-decoration: none;
 }
 
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header, footer {
   max-width: 1440px;
   padding-top: 3%;

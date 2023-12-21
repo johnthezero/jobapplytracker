@@ -7,6 +7,7 @@ const { ObjectId } = require("mongodb");
 const validator=require('validator');
 //const { isEmail  } = require("validator");
 const auth=require("../middleware/auth");
+const { render } = require("ejs");
 
 
 
@@ -180,7 +181,15 @@ module.exports.update_post= async(req,res)=>{
     const user={ id : req.user.user._id,firstname : req.user.user.firstname };
     res.render("dashboard",{list,user});
 };
-
+module.exports.delete_job_post= async (req,res)=>{
+    try{
+        await Job.deleteOne({ _id: req.body.job_id }); 
+    }catch(err){
+        res.status(400).send("Job does not exists !");
+    }
+    const list=await Job.find({user_id : req.user.user._id});
+    res.render("dashboard",{user :req.user.user,list : list}); 
+}      
 module.exports.getjob_post = async (req, res) => {
     try {
         if (req.user["user"]._id == req.body.user_id) {
@@ -273,4 +282,5 @@ module.exports.updatepassword_post = async (req, res) => {
 module.exports.logout_post = async (req, res) => {
     res.clearCookie("jwt").redirect("/login");
 };
+
 

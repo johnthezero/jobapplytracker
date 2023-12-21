@@ -14,6 +14,7 @@ router.post("/login",routeController.login_post,(req,res)=>{
 });
 router.get("/signup",routeController.signup_get);
 router.post("/logout",auth,routeController.logout_post);
+router.post("/delete_job",auth,routeController.delete_job_post);
 router.get("/profile",auth,routeController.profile_get);
 router.post("/profile",auth,routeController.profile_post);
 router.post("/signup",routeController.signup_post);
