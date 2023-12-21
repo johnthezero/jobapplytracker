@@ -97,24 +97,42 @@ body{
             padding-bottom: 15px;
         }
         .main-grid{
-            display: grid;
-            grid-template-columns: 3;
-            grid-template-rows: 2;
-            .left{
-                grid-row: 1/3;
-                grid-column: 1/2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            .up{
                 .profile-picture{
                     width: 35px;
                     height: 35px;
                 }
             }
-            .right{
+            .down{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
                 .infos{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+
                     p{
                      line-height: 1.4rem;
                     }
                 }
                 .modify-upload{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                     
+
                     .cv-download-upload{
 
                         .upload{
@@ -166,7 +184,50 @@ body{
                     }
                     .password-change::backdrop{
                         background: rgb(0,0,0,0.8);
-                        
+                        backdrop-filter: blur(5px);
+                    }
+                    .profile-update{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 25px;
+                        border-top-right-radius: 0%;
+                        padding: 5px;
+                        background-color: gray;
+                        border: 1px solid black;
+                        div {
+                            position: relative;
+                            text-align: right; 
+
+                            a {
+                                position: relative;
+                                top: 0%;
+                                right: 0%;
+                                background-color: red;
+                                color: white;
+                                padding: 3px;
+                                text-align: right;
+                                
+                            }
+                        }
+                        .profile-update-form{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 10px;
+                            input{
+                                font-size: 20px;
+                                border-radius: 25px;
+                                border: 1px solid black;
+                            }
+                        }
+
+                    }
+                    .profile-update::backdrop{
+                        background: rgb(0,0,0,0.8);
+                        backdrop-filter: blur(5px);
                     }
                 }
             }

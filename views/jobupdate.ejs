@@ -11,11 +11,11 @@
     <div class="form-div">
         <form class="update-form" action="/updatejob" method="post">
             <label for="jobtitle">Jobtitle</label>
-            <input  id ="jobtitle" type="text" value="<%=job.jobtitle%>" name="jobtitle">
+            <input  id ="jobtitle" type="text" value="<%=job.jobtitle%>" name="jobtitle" required>
             <label for="company_name">Company</label>
-            <input  id="company_name" type="text" value="<%=job.company_name%>" name="company_name">
+            <input  id="company_name" type="text" value="<%=job.company_name%>" name="company_name" required>
             <label for="website">Website</label>
-            <input  id="website" type="text" value="<%=job.website%>" name="website">
+            <input  id="website" type="text" value="<%=job.website%>" name="website" required>
             <label for="contact_name">Name of the contact</label>
             <input  id ="contact_name" type="text" value="<%= job.contact_name %>" name="contact_name">
             <label for="email">Email</label>

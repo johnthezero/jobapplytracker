@@ -24,6 +24,7 @@ router.post("/updatejob",auth,routeController.jobupdate_post);
 router.get("/jobcreation",auth,routeController.jobcreation_get);
 router.post("/jobcreation",auth,routeController.jobcreation_post);
 router.post("/getjob",auth,routeController.getjob_post);    
+router.post("/profile_update_post",auth,routeController.profile_update_post);
 router.get("/job/:id",auth,routeController.getjob_get);
 router.get("/jobupdate/:id",auth,routeController.jobupdate_get);
 router.post("/updatepassword",auth,routeController.updatepassword_post);

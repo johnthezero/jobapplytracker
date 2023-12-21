@@ -86,25 +86,44 @@ body .main-container .title {
   padding-bottom: 15px;
 }
 body .main-container .main-grid {
-  display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
-body .main-container .main-grid .left {
-  grid-row: 1/3;
-  grid-column: 1/2;
-}
-body .main-container .main-grid .left .profile-picture {
+body .main-container .main-grid .up .profile-picture {
   width: 35px;
   height: 35px;
 }
-body .main-container .main-grid .right .infos p {
+body .main-container .main-grid .down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+body .main-container .main-grid .down .infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+body .main-container .main-grid .down .infos p {
   line-height: 1.4rem;
 }
-body .main-container .main-grid .right .modify-upload .cv-download-upload .upload input {
+body .main-container .main-grid .down .modify-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+body .main-container .main-grid .down .modify-upload .cv-download-upload .upload input {
   display: none;
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change {
+body .main-container .main-grid .down .modify-upload .modify .password-change {
   border: 3px solid black;
   padding: 10px;
   border-radius: 25%;
@@ -115,11 +134,11 @@ body .main-container .main-grid .right .modify-upload .modify .password-change {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change div {
+body .main-container .main-grid .down .modify-upload .modify .password-change div {
   position: relative;
   text-align: right;
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change div a {
+body .main-container .main-grid .down .modify-upload .modify .password-change div a {
   position: relative;
   top: 0%;
   right: 0%;
@@ -129,20 +148,63 @@ body .main-container .main-grid .right .modify-upload .modify .password-change d
   text-align: right;
   border: 1px solid black;
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change .updatepassword {
+body .main-container .main-grid .down .modify-upload .modify .password-change .updatepassword {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change .updatepassword input {
+body .main-container .main-grid .down .modify-upload .modify .password-change .updatepassword input {
   font-size: 24px;
   border-radius: 25px;
   border: 1px solid black;
 }
-body .main-container .main-grid .right .modify-upload .modify .password-change::backdrop {
+body .main-container .main-grid .down .modify-upload .modify .password-change::backdrop {
   background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  border-top-right-radius: 0%;
+  padding: 5px;
+  background-color: gray;
+  border: 1px solid black;
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update div {
+  position: relative;
+  text-align: right;
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update div a {
+  position: relative;
+  top: 0%;
+  right: 0%;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  text-align: right;
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update .profile-update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update .profile-update-form input {
+  font-size: 20px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+body .main-container .main-grid .down .modify-upload .modify .profile-update::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 @media only screen and (max-width: 600px) {

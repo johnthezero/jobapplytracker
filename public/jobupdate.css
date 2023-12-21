@@ -70,4 +70,10 @@ body .job-creation-container .form-div .update-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
+}
+body .job-creation-container .form-div input {
+  max-width: 200px;
+  padding: 2px;
+  border-radius: 25px;
 }/*# sourceMappingURL=jobupdate.css.map */

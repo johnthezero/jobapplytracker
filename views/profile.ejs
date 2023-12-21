@@ -9,10 +9,13 @@
 <div class="main-container">
     <div class="title">My Profile</div>
     <div class="main-grid">
-        <div class="left">
+        <div class="up">
             <img class="profile-picture" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+            <form >
+                <button class="btn">Change profile picture</button>
+            </form>
         </div>
-        <div class="right">
+        <div class="down">
             <div class="infos">
                 <p>Full name : <%= user.firstname %>,<%= user.lastname %> </p>
                 <p>email : <%= user.email %></p>
@@ -20,8 +23,6 @@
             </div>
             <div class="modify-upload">
                 <form class="cv-download-upload" action="/test" method="post">
-                    
-                    
                     <a href="#" class="download btn">Download CV</a>
                     <label class="upload btn" for="upload_btn"><input id="upload_btn" type="file" hidden/>Upload CV</label>
                 </form>
@@ -41,6 +42,21 @@
                             <button class="update">Save</button>
                         </form> 
                     </dialog>
+                    <button class="change-profile btn">Update profile</button>
+                    <dialog class="profile-update">
+                        <div>
+                            <a class="close-update-profile" href="#">X</a>
+                        </div>
+                        <form class="profile-update-form" action="profile_update_post" method="post">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" id="firstname" name="firstname" value="<%=user.firstname %>">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" id="lastname" name="lastname" value="<%=user.lastname %>">
+                            <label for="github">Github</label>
+                            <input type="text" id="github" name="github" value="<%=user.github %>">
+                            <button class="update">Save</button>
+                        </form> 
+                    </dialog>
                     
                 </div>
             </div>   
@@ -54,10 +70,19 @@
     const btn=document.querySelector('.change-password');
     btn.addEventListener('click',()=>{
         modal.showModal();
-    })  
+    });
     const close=document.querySelector('.close-modal');
     close.addEventListener('click',()=>{
         modal.close();
-    })
+    });
+    const modal2=document.querySelector('.profile-update');
+    const btn2=document.querySelector('.change-profile');
+    btn2.addEventListener('click',()=>{
+        modal2.showModal();
+    });
+    const close2=document.querySelector('.close-update-profile');
+    close2.addEventListener('click',()=>{
+        modal2.close();
+    });
 </script>
 </html>

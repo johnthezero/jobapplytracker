@@ -9,8 +9,6 @@ const validator=require('validator');
 const auth=require("../middleware/auth");
 const { render } = require("ejs");
 
-
-
 module.exports.jobcreation_get=async(req,res)=>{
     res.render("jobcreation");
 }
@@ -307,5 +305,20 @@ module.exports.updatepassword_post = async (req, res) => {
 module.exports.logout_post = async (req, res) => {
     res.clearCookie("jwt").redirect("/login");
 };
-
+module.exports.profile_update_post = async (req, res) => {
+    const { firstname, lastname, github } = req.body;
+    const user=await User.updateOne(
+        { _id: req.user.user._id },
+        {
+            firstname : firstname,
+            lastname : lastname,
+            github : github,
+        }
+    );
+    res.redirect("/profile");
+}
+module.exports.upload_file = async (req, res) => {
+    console.log(req.body);
+    res.send("file uploaded");
+}
 
