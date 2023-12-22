@@ -2,6 +2,8 @@ const { Router } = require("express");
 const router=Router();
 const cookieParser = require("cookie-parser");
 const  auth =require("../middleware/auth");
+const isLoggedIn = require("../middleware/isLoggedIn");
+require("../middleware/google-auth");
 // IMPLEMENT IT  ↓ ▼ ↓
 const routeController=require("../controllers/routeController");
 
@@ -12,6 +14,9 @@ router.get("/login",routeController.login_get);
 router.post("/login",routeController.login_post,(req,res)=>{
     res.redirect("dashboard");
 });
+router.get("/google/callback",routeController.auth_google_callback_get);
+router.get("/protected",isLoggedIn,routeController.protected_get);
+router.get("/auth/google",routeController.auth_google_get);
 router.get("/signup",routeController.signup_get);
 router.post("/logout",auth,routeController.logout_post);
 router.post("/delete_job",auth,routeController.delete_job_post);

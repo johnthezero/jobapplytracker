@@ -1,7 +1,9 @@
 require ("dotenv").config();
 const { MONGO_URI } = process.env;
+const passport = require("passport");
 const mongoose = require("mongoose");
 const express=require("express");
+const session=require("express-session");
 const routes=require("./routes/routes");
 const cookieParser=require("cookie-parser");
 const bodyParser=require("body-parser");
@@ -16,7 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(session({secret : '321321321'}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 

@@ -3,14 +3,30 @@ const bcrypt = require("bcryptjs");
 const User=require("../models/User");
 const Job=require("../models/Job");
 const { ObjectId } = require("mongodb");
-//module.exports.checkUser=(id,password)=>{
 const validator=require('validator');
-//const { isEmail  } = require("validator");
 const auth=require("../middleware/auth");
 const { render } = require("ejs");
+const passport = require('passport');
+
+
 
 module.exports.jobcreation_get=async(req,res)=>{
     res.render("jobcreation");
+}
+module.exports.protected_get= (req,res)=>{
+
+}
+module.exports.protected_get= (req,res)=>{
+
+}
+module.exports.auth_google_callback_get= (req,res)=>{
+    passport.authenticate('google', { 
+        successRedirect: '/protected',
+        failureRedirect: '/login' }
+        );
+}
+module.exports.auth_google_get= (req,res)=>{
+    passport.authenticate('google', { scope: ['email','profile'] });
 }
 module.exports.jobcreation_post=async (req,res)=>{
 

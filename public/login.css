@@ -39,6 +39,7 @@ header, footer {
 
 .container {
   display: flex;
+  max-width: 1440px;
 }
 
 .userlogo img {
@@ -97,7 +98,9 @@ body .header-container header nav .user-menu-big .user-menu-big-list li a {
 body .login {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 15px;
 }
 body .login h1 {
   padding-top: 25px;
@@ -115,6 +118,17 @@ body .login .login-form {
 body .login .login-form input {
   border-radius: 25px;
   height: 30px;
+}
+body .login hr {
+  width: 150px;
+}
+body .login .login-strategies {
+  border: 2px solid white;
+  padding: 10px;
+}
+body .login .login-strategies a img {
+  width: 27px;
+  height: 27px;
 }
 
 @media only screen and (max-width: 600px) {

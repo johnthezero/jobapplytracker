@@ -38,7 +38,7 @@ header,footer{
 }
 .container{
     display: flex;
-    
+    max-width: 1440px;
 }
 .userlogo{
     img{
@@ -114,8 +114,9 @@ body{
     .login{
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        
+        gap: 15px;
         h1{
             padding-top: 25px;
             padding-bottom: 25px;
@@ -131,6 +132,19 @@ body{
             input{
                 border-radius: 25px;
                 height: 30px;
+            }
+        }
+        hr{
+            width: 150px;
+        }
+        .login-strategies{
+            border: 2px solid white;
+            padding: 10px;
+            a{
+                img{
+                    width: 27px;
+                    height: 27px;
+                }
             }
         }
     }   
