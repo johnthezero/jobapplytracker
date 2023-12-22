@@ -11,6 +11,19 @@ a{
     flex-direction: row;    
     justify-content: space-between;
     align-items: center;
+    form{
+        label{
+            padding: 5px;
+            border-radius: 25px;
+            background-color: darkcyan ;
+            color: white;
+        }
+        
+    }
+}
+#btn{
+    display: none;
+    
 }
 input{
     //display: flex;
@@ -31,6 +44,23 @@ header,footer{
     img{
         width: 35px;
         height: 35px;
+    }
+}
+.register{
+    padding: 10px;
+    text-align: center;
+    span{
+        a{
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            background-color:red; 
+            border-radius: 25px;
+        }
+        a:hover{
+            background-color: green;
+        }
     }
 }
 body{

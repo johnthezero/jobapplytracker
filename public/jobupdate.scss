@@ -11,6 +11,19 @@ a{
     flex-direction: row;    
     justify-content: space-between;
     align-items: center;
+    form{
+        label{
+            padding: 5px;
+            border-radius: 25px;
+            background-color: darkcyan ;
+            color: white;
+        }
+        
+    }
+}
+#btn{
+    display: none;
+    
 }
 input{
     //display: flex;

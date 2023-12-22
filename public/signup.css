@@ -20,6 +20,23 @@ header, footer {
   display: flex;
 }
 
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.right-nav form label {
+  padding: 5px;
+  border-radius: 25px;
+  background-color: darkcyan;
+  color: white;
+}
+
+#btn {
+  display: none;
+}
+
 input {
   border-radius: 25px;
   padding: 3px;
